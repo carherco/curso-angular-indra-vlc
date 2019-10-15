@@ -1,0 +1,7 @@
+.img_small {
+  margin-right: 8px;
+}
+
+.img_selected {
+  border: 8px solid red;
+}

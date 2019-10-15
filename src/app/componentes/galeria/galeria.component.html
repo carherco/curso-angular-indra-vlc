@@ -1,0 +1,25 @@
+<h2>Gallery</h2>
+
+<div>
+  <img [src]="currentImage" [width]="width">
+</div>
+
+<div>
+  <button [disabled]="currentIndex <= 0" (click)="prev()">Previous</button>
+  <button [disabled]="currentIndex >= images.length - 1" (click)="next()">Next</button>
+  <button (click)="zoomIn()">Zoom in</button>
+  <button (click)="zoomOut()">Zoom out</button>
+  <button *ngIf="!playing" (click)="play()">Play</button>
+  <button *ngIf="playing" (click)="stop()">Stop</button>
+</div>
+
+<div>
+  <span>Previous page</span>
+  <img *ngFor="let image of images | slice:0:3; let i=index;"
+       [src]="image"
+       class="img_small"
+       [class.img_selected]="currentIndex === i"
+       (click)="selectImage(i)"
+       width="50">
+  <span>Next page</span>
+</div>

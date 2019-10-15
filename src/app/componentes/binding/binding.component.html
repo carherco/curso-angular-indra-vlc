@@ -1,0 +1,34 @@
+<p>Hola, {{ nombre }}</p>
+<p *ngIf="nombre" class="algo">{{num1}} + {{num2}} = {{num1 + num2}}</p>
+
+<div *ngIf="nombre">
+  <div>
+    <p>
+      Párrafo dentro de divs
+    </p>
+  </div>
+</div>
+
+<app-primer *ngIf="nombre"></app-primer>
+
+<ul>
+  <ng-container *ngFor="let usuario of usuarios; let i=index;">
+    <li *ngIf=""> <!-- index, first, last, odd, even -->
+      <div> {{i}}: {{ usuario }}</div>
+    </li>
+  </ng-container>
+</ul>
+
+<input value="{{ nombre }}">
+
+<input [value]="nombre" (keyup)="cambiarNombre($event.target.value)">
+
+<input [value]="nombre" (keyup)="nombre = $event.target.value">
+
+<label>Doble binding: </label><input [(ngModel)]="nombre">
+
+
+
+<input [value]="nombreCompleto()">
+
+<button (click)="cambiarNombre('Marta')">Haz click</button>
