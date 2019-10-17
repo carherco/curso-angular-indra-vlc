@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'indra.com/api/dev'
+  apiUrl: 'https://jsonplaceholder.typicode.com/'
 };
 
 /*

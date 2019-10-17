@@ -1,0 +1,26 @@
+<h2>CRUD de usuarios (MASTER)</h2>
+
+<div>
+  <h3>Alta de usuario</h3>
+  <form>
+    <label>Name:</label><input name="name" [(ngModel)]="newUser.name">
+    <label>Email:</label><input name="email" [(ngModel)]="newUser.email">
+    <label>Phone:</label><input name="phone" [(ngModel)]="newUser.phone">
+    <button (click)="add()">Añadir</button>
+  </form>
+</div>
+
+<h3>Listado de usuarios</h3>
+<label>Buscar por email: </label><input #search>
+<app-usuarios-listado
+  [users]="users"
+  [selectedUser]="selectedUser"
+  (selectEvent)="select($event)"
+  (editEvent)="goToEdit($event)"
+  (deleteEvent)="delete($event)"></app-usuarios-listado>
+
+<div>
+  <app-usuarios-detalle *ngIf="selectedUser"
+  [user]="selectedUser"
+  (eliminarEvent)="delete($event)"></app-usuarios-detalle>
+</div>

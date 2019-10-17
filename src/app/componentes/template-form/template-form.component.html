@@ -1,0 +1,48 @@
+<div>
+  <h1>User Form</h1>
+
+  {{ user | json }}
+
+  <form #form="ngForm" *ngIf="user">
+    <div>
+      <label for="name">Name: </label>
+      <input type="text" id="name" name="name" required email minlength="6" [(ngModel)]="user.name" #spy #name="ngModel">
+      <div *ngIf="name.errors">
+        <p *ngIf="name.errors.email">El valor debe ser un email</p>
+        <p *ngIf="name.errors.minlength">Longitud mínima de 6</p>
+      </div>
+    </div>
+
+    <div>
+      <label for="username">Username: </label>
+      <input type="text" id="username" name="username" required [(ngModel)]="user.username" #username>
+    </div>
+
+    <div>
+      <label for="email">Email: </label>
+      <input type="email" id="email" name="email" email [(ngModel)]="user.email">
+    </div>
+
+    <h4>Address</h4>
+    <div>
+      <div>
+        <label for="street">Street:
+          <input type="text" id="street" name="street" [(ngModel)]="user.address.street">
+        </label>
+      </div>
+      <div>
+        <label for="city">City:
+          <input type="text" id="city" name="city" [(ngModel)]="user.address.city">
+        </label>
+      </div>
+      <div>
+        <label for="zipcode">Zip Code:
+          <input type="text" id="zipcode" name="zipcode" [(ngModel)]="user.address.zipcode">
+        </label>
+      </div>
+    </div>
+
+    <button [disabled]="form.invalid" type="submit" (click)="guardar(); form.reset();">Submit</button>
+    <button (click)="volver()">Volver</button>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+<h3>Detalle del usuario</h3>
+<form>
+  <div>Id: {{ user.id }}</div>
+  <label>Name:</label><input name="name" [(ngModel)]="user.name">
+  <label>Username:</label><input name="username" [(ngModel)]="user.username">
+  <label>Phone:</label><input name="phone" [(ngModel)]="user.phone">
+  <button (click)="delete()">Eliminar</button>
+</form>

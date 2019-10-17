@@ -1,1 +1,4 @@
 <h1>Curso de Angular</h1>
+
+<app-login *ngIf="!isLogged()"></app-login>
+<app-logged *ngIf="isLogged()"></app-logged>

@@ -71,4 +71,8 @@ export class GaleriaComponent implements OnInit {
     this.playing = false;
   }
 
+  ngOnDestroy() {
+    this.stop();
+  }
+
 }

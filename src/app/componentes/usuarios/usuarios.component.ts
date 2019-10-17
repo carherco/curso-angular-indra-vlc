@@ -9,12 +9,30 @@ import { USERS } from 'src/app/data/users';
 })
 export class UsuariosComponent implements OnInit {
 
-  color_en_el_ts = 'orange';
-
   users: User[] = USERS;
-  constructor() { }
+  newUser: User;
+  selectedUser: User;
+
+  constructor() {
+    this.newUser = new User(11);
+  }
 
   ngOnInit() {
+  }
+
+  select(user: User) {
+    this.selectedUser = {...user};
+  }
+
+  add() {
+    this.users.push(  {...this.newUser}  );
+    this.users = [...this.users];
+    this.newUser = new User(12);
+  }
+
+  delete(user: User) {
+    this.users = this.users.filter( item => item.id !== user.id );
+    this.selectedUser = null;
   }
 
 }

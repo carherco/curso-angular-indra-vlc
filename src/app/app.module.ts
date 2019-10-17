@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,14 @@ import { GaleriaComponent } from './componentes/galeria/galeria.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { PieComponent } from './componentes/pie/pie.component';
+import { UsuariosMasterComponent } from './componentes/usuarios-master/usuarios-master.component';
+import { UsuariosDetalleComponent } from './componentes/usuarios-detalle/usuarios-detalle.component';
+import { UsuariosListadoComponent } from './componentes/usuarios-listado/usuarios-listado.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { LoggedComponent } from './componentes/logged/logged.component';
+import { TemplateFormComponent } from './componentes/template-form/template-form.component';
+import { TemplateVariablesComponent } from './componentes/template-variables/template-variables.component';
+import { ObservablesComponent } from './componentes/observables/observables.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +42,21 @@ import { PieComponent } from './componentes/pie/pie.component';
     GaleriaComponent,
     CabeceraComponent,
     MenuComponent,
-    PieComponent
+    PieComponent,
+    UsuariosMasterComponent,
+    UsuariosDetalleComponent,
+    UsuariosListadoComponent,
+    LoginComponent,
+    LoggedComponent,
+    TemplateFormComponent,
+    TemplateVariablesComponent,
+    ObservablesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
