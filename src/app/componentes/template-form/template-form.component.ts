@@ -3,13 +3,14 @@ import { UserService } from 'src/app/servicios/user.service';
 import { User } from 'src/app/model/user';
 import { ActivatedRoute, Router } from '@angular/router';
 import { flatMap } from 'rxjs/operators';
+import { TieneCambiosSinGuardar } from 'src/app/model/tiene-cambios-sin-guardar';
 
 @Component({
   selector: 'app-template-form',
   templateUrl: './template-form.component.html',
   styleUrls: ['./template-form.component.css']
 })
-export class TemplateFormComponent implements OnInit {
+export class TemplateFormComponent implements TieneCambiosSinGuardar {
 
   user: User;
   constructor(private userService: UserService, private ruta: ActivatedRoute, private router: Router) {
@@ -29,15 +30,16 @@ export class TemplateFormComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-  }
-
   guardar() {
     this.userService.save(this.user);
   }
 
   volver() {
-    this.router.navigate(['usuarios2'])
+    this.router.navigate(['usuarios2']);
+  }
+
+  tieneCambiosSinGuardar(): boolean {
+    return true;
   }
 
 }

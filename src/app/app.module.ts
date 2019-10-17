@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +26,7 @@ import { LoggedComponent } from './componentes/logged/logged.component';
 import { TemplateFormComponent } from './componentes/template-form/template-form.component';
 import { TemplateVariablesComponent } from './componentes/template-variables/template-variables.component';
 import { ObservablesComponent } from './componentes/observables/observables.component';
+import { ReactiveFormComponent } from './componentes/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -50,12 +51,14 @@ import { ObservablesComponent } from './componentes/observables/observables.comp
     LoggedComponent,
     TemplateFormComponent,
     TemplateVariablesComponent,
-    ObservablesComponent
+    ObservablesComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

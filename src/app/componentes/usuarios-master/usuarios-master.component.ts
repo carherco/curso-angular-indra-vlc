@@ -61,7 +61,7 @@ export class UsuariosMasterComponent implements OnInit {
   }
 
   goToEdit(user: User) {
-    const url = 'usuarios/edit/' + user.id;
+    const url = 'usuarios/edit-reactivo/' + user.id;
     this.router.navigate([url]);
   }
 
